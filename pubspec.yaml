@@ -16,11 +16,16 @@ dependencies:
 
   built_value: ^7.1.0
   built_collection: ^4.3.2
+  dio: ^3.0.10
+  mobx: ^1.2.1+2
+  flutter_mobx: ^1.1.0+2
+  provider: ^4.3.2+2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  mobx_codegen: ^1.1.0+1
   build_runner: ^1.10.2
   built_value_generator: ^7.1.0
 
