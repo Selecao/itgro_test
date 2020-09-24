@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:forcechallenge/components/application/app_theme.dart';
+import 'package:itgro_test/components/application/app_theme.dart';
 
 class AApp extends StatefulWidget {
   const AApp({
@@ -146,7 +146,7 @@ class AAppState extends State<AApp> {
   }
 
   // Combine the default localization for Cupertino with the ones contributed
-  // by th localizationsDelegates parameter, if any. Only the first delegate
+  // by the localizationsDelegates parameter, if any. Only the first delegate
   // of a particular LocalizationsDelegate.type is loaded so the
   // localizationDelegate parameter can be used to override
   // _CupertinoLocalizationsDelegate.
