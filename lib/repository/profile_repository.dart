@@ -4,9 +4,9 @@ import 'package:itgro_test/models/profile.dart';
 import 'package:itgro_test/services/api_service.dart';
 
 class ProfileRepository {
-  ApiService httpClient = ApiService();
+  ApiService apiService = ApiService();
 
   Future<BuiltList<Profile>> getProfiles() async {
-    return httpClient.getList('/api?results=10');
+    return apiService.getList('/api?results=10');
   }
 }
