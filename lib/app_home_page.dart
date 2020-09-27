@@ -48,26 +48,29 @@ class _AppHomePageState extends State<AppHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('ITGRO test'),
-      // ),
       body: Observer(
         builder: (_) {
           switch (_profileStore.status) {
             case FutureStatus.pending:
               return buildLoading();
             case FutureStatus.fulfilled:
-              return Text('her tebe, vse norm');
-            //return buildLoaded();
+              return buildLoaded();
+            case FutureStatus.rejected:
+              return buildRejected();
             default:
-              return buildInitialInput();
+              return buildInitialInput(
+                  title: 'Добро пожаловать!',
+                  description:
+                      'Нажмите на кнопку ниже, чтобы загрузить список профилей.',
+                  buttonText: 'Загрузить профили');
           }
         },
       ),
     );
   }
 
-  Widget buildInitialInput() {
+  Widget buildInitialInput(
+      {String title, String description, String buttonText}) {
     return CustomScrollView(slivers: [
       SliverPersistentHeader(
         pinned: true,
@@ -99,12 +102,12 @@ class _AppHomePageState extends State<AppHomePage> {
                   child: Column(
                     children: [
                       Text(
-                        'Добро пожаловать!',
+                        '$title',
                         style: AppTheme.of(context).greetingBoldTextStyle,
                       ),
                       SizedBox(height: 16.0),
                       Text(
-                        'Нажмите на кнопку ниже, чтобы загрузить список профилей.',
+                        '$description',
                         textAlign: TextAlign.center,
                         style: AppTheme.of(context).greetingTextStyle,
                       ),
@@ -123,7 +126,7 @@ class _AppHomePageState extends State<AppHomePage> {
                         borderRadius: AppTheme.of(context).framesRadius,
                       ),
                       child: Text(
-                        'Загрузить профили',
+                        '$buttonText',
                         style: AppTheme.of(context)
                             .greetingTextStyle
                             .copyWith(color: Colors.white),
@@ -163,6 +166,14 @@ class _AppHomePageState extends State<AppHomePage> {
         ),
       ),
     ]);
+  }
+
+  Widget buildRejected() {
+    return buildInitialInput(
+        title: 'Загрузка Отклонена!',
+        description:
+            'Нажмите на кнопку ниже, чтобы повторно загрузить список профилей.',
+        buttonText: 'Загрузить профили');
   }
 
   Widget buildLoaded() {
