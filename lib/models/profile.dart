@@ -20,26 +20,37 @@ abstract class Profile implements Built<Profile, ProfileBuilder> {
 
   factory Profile([updates(ProfileBuilder b)]) = _$Profile;
 
+  @nullable
   @BuiltValueField(wireName: 'name')
   Name get name;
+  @nullable
   @BuiltValueField(wireName: 'location')
   Location get location;
+  @nullable
   @BuiltValueField(wireName: 'email')
   String get email;
+  @nullable
   @BuiltValueField(wireName: 'login')
   Login get login;
+  @nullable
   @BuiltValueField(wireName: 'dob')
   Dob get dob;
+  @nullable
   @BuiltValueField(wireName: 'registered')
   Registered get registered;
+  @nullable
   @BuiltValueField(wireName: 'phone')
   String get phone;
+  @nullable
   @BuiltValueField(wireName: 'cell')
   String get cell;
+  @nullable
   @BuiltValueField(wireName: 'id')
   Id get id;
+  @nullable
   @BuiltValueField(wireName: 'picture')
   Picture get picture;
+  @nullable
   @BuiltValueField(wireName: 'nat')
   String get nat;
   String toJson() {

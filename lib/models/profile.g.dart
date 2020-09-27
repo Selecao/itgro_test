@@ -17,36 +17,73 @@ class _$ProfileSerializer implements StructuredSerializer<Profile> {
   @override
   Iterable<Object> serialize(Serializers serializers, Profile object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
-      'name',
-      serializers.serialize(object.name, specifiedType: const FullType(Name)),
-      'location',
-      serializers.serialize(object.location,
-          specifiedType: const FullType(Location)),
-      'email',
-      serializers.serialize(object.email,
-          specifiedType: const FullType(String)),
-      'login',
-      serializers.serialize(object.login, specifiedType: const FullType(Login)),
-      'dob',
-      serializers.serialize(object.dob, specifiedType: const FullType(Dob)),
-      'registered',
-      serializers.serialize(object.registered,
-          specifiedType: const FullType(Registered)),
-      'phone',
-      serializers.serialize(object.phone,
-          specifiedType: const FullType(String)),
-      'cell',
-      serializers.serialize(object.cell, specifiedType: const FullType(String)),
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(Id)),
-      'picture',
-      serializers.serialize(object.picture,
-          specifiedType: const FullType(Picture)),
-      'nat',
-      serializers.serialize(object.nat, specifiedType: const FullType(String)),
-    ];
-
+    final result = <Object>[];
+    if (object.name != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(object.name,
+            specifiedType: const FullType(Name)));
+    }
+    if (object.location != null) {
+      result
+        ..add('location')
+        ..add(serializers.serialize(object.location,
+            specifiedType: const FullType(Location)));
+    }
+    if (object.email != null) {
+      result
+        ..add('email')
+        ..add(serializers.serialize(object.email,
+            specifiedType: const FullType(String)));
+    }
+    if (object.login != null) {
+      result
+        ..add('login')
+        ..add(serializers.serialize(object.login,
+            specifiedType: const FullType(Login)));
+    }
+    if (object.dob != null) {
+      result
+        ..add('dob')
+        ..add(serializers.serialize(object.dob,
+            specifiedType: const FullType(Dob)));
+    }
+    if (object.registered != null) {
+      result
+        ..add('registered')
+        ..add(serializers.serialize(object.registered,
+            specifiedType: const FullType(Registered)));
+    }
+    if (object.phone != null) {
+      result
+        ..add('phone')
+        ..add(serializers.serialize(object.phone,
+            specifiedType: const FullType(String)));
+    }
+    if (object.cell != null) {
+      result
+        ..add('cell')
+        ..add(serializers.serialize(object.cell,
+            specifiedType: const FullType(String)));
+    }
+    if (object.id != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(object.id,
+            specifiedType: const FullType(Id)));
+    }
+    if (object.picture != null) {
+      result
+        ..add('picture')
+        ..add(serializers.serialize(object.picture,
+            specifiedType: const FullType(Picture)));
+    }
+    if (object.nat != null) {
+      result
+        ..add('nat')
+        ..add(serializers.serialize(object.nat,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -151,41 +188,7 @@ class _$Profile extends Profile {
       this.id,
       this.picture,
       this.nat})
-      : super._() {
-    if (name == null) {
-      throw new BuiltValueNullFieldError('Profile', 'name');
-    }
-    if (location == null) {
-      throw new BuiltValueNullFieldError('Profile', 'location');
-    }
-    if (email == null) {
-      throw new BuiltValueNullFieldError('Profile', 'email');
-    }
-    if (login == null) {
-      throw new BuiltValueNullFieldError('Profile', 'login');
-    }
-    if (dob == null) {
-      throw new BuiltValueNullFieldError('Profile', 'dob');
-    }
-    if (registered == null) {
-      throw new BuiltValueNullFieldError('Profile', 'registered');
-    }
-    if (phone == null) {
-      throw new BuiltValueNullFieldError('Profile', 'phone');
-    }
-    if (cell == null) {
-      throw new BuiltValueNullFieldError('Profile', 'cell');
-    }
-    if (id == null) {
-      throw new BuiltValueNullFieldError('Profile', 'id');
-    }
-    if (picture == null) {
-      throw new BuiltValueNullFieldError('Profile', 'picture');
-    }
-    if (nat == null) {
-      throw new BuiltValueNullFieldError('Profile', 'nat');
-    }
-  }
+      : super._();
 
   @override
   Profile rebuild(void Function(ProfileBuilder) updates) =>
@@ -341,36 +344,36 @@ class ProfileBuilder implements Builder<Profile, ProfileBuilder> {
     try {
       _$result = _$v ??
           new _$Profile._(
-              name: name.build(),
-              location: location.build(),
+              name: _name?.build(),
+              location: _location?.build(),
               email: email,
-              login: login.build(),
-              dob: dob.build(),
-              registered: registered.build(),
+              login: _login?.build(),
+              dob: _dob?.build(),
+              registered: _registered?.build(),
               phone: phone,
               cell: cell,
-              id: id.build(),
-              picture: picture.build(),
+              id: _id?.build(),
+              picture: _picture?.build(),
               nat: nat);
     } catch (_) {
       String _$failedField;
       try {
         _$failedField = 'name';
-        name.build();
+        _name?.build();
         _$failedField = 'location';
-        location.build();
+        _location?.build();
 
         _$failedField = 'login';
-        login.build();
+        _login?.build();
         _$failedField = 'dob';
-        dob.build();
+        _dob?.build();
         _$failedField = 'registered';
-        registered.build();
+        _registered?.build();
 
         _$failedField = 'id';
-        id.build();
+        _id?.build();
         _$failedField = 'picture';
-        picture.build();
+        _picture?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'Profile', _$failedField, e.toString());
