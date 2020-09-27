@@ -75,7 +75,7 @@ class ApiService {
     if (response.data == null) {
       return BuiltList<T>();
     }
-    var rawList = (response.data as List<dynamic>);
+    var rawList = (response.data['results'] as List<dynamic>);
     return BuiltList<T>(rawList.map((item) {
       if (T is String) {
         return item;
